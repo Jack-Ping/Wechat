@@ -1,0 +1,22 @@
+/**index.wxss**/
+.form {
+   width: 85%;
+}
+
+.row {
+   margin-bottom: 15px;
+}
+
+.row input {
+   border-bottom: 1px solid black;
+}
+
+.row input.error {
+   color: red;
+   border-bottom: 1px solid red;
+}
+
+.picker {
+   border-bottom:1px solid black;
+   height:1.4rem;
+}

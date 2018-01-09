@@ -1,0 +1,29 @@
+<!--index.wxml-->
+<view class="container">
+    <form class="form" bindsubmit="submit" id='form'>
+
+        <view class="row">
+            <view>Name :</view>
+            <input type="text" name="name" placeholder="eg. Jack Ping" bind:blur="validateName" class="{{formInfo.nameError ? 'error' : ''}}" focus="{{nameFocus}}" value="{{formVal.name}}"/>
+        </view>
+        <view class="row">
+            <text>Mobile Number :</text>
+            <input type="number" name="mobile" bind:blur="validateMobile" placeholder="eg. 13700000000" class="{{formInfo.mobileError ? 'error' : ''}}" value="{{formVal.mobile}}"/>
+        </view>
+        <view class="row">
+            <text>E-mail：</text>
+            <input type="text" name="email" bind:blur="validateMail" placeholder="eg. youremail@email.com" class="{{formInfo.mailError ? 'error' : ''}}" value="{{formVal.mail}}"/>
+        </view>
+
+        <view class="row">
+            <text>Birthdate :</text>
+            <picker mode="date" name="birth" class="picker" bindchange="changeData" style="color:{{placeholderColor}}">
+                {{formVal.pickerData}}
+            </picker>
+        </view>
+
+        <view class="submit">
+            <button type="primary" disabled="{{nameError || mobileError || mailError ? 'disabled' : ''}}" form-type="submit">Submit</button>
+        </view>
+    </form>
+</view>
