@@ -8,11 +8,6 @@ Page({
   data: {
     placeholderColor: 'gray',
     codeLength: 7,
-    regularExpression: {
-      name: /[`~!@#$%^&*_+<>{}\/'[\]]/,
-      phone: /^1(3|4|5|7|8)\d{9}$/,
-      mail: /^[A-Za-z0-9]+([-_.][A-Za-zd]+)*@([A-Za-zd]+[-.])+[A-Za-zd]{2,5}$/
-    },
     formInfo: {
       nameError: false,
       mobileError: false,
@@ -88,13 +83,13 @@ Page({
   },
   // input validation
   validateName: function (e) {
-    this.validate(this.data.regularExpression.name, e.detail.value) ? this.showError('name','Invalid Name !',e.detail.value) : this.cleanError('name');
+    this.validate(/[`~!@#$%^&*_+<>{}\/'[\]]/, e.detail.value) ? this.showError('name','Invalid Name !',e.detail.value) : this.cleanError('name');
   },
   validateMobile: function (e) {
-    this.validate(this.data.regularExpression.phone, e.detail.value, true) ? this.showError('mobile', 'Invalid Phone Number !',e.detail.value) : this.cleanError('mobile');
+    this.validate(/^1(3|4|5|7|8)\d{9}$/, e.detail.value, true) ? this.showError('mobile', 'Invalid Phone Number !',e.detail.value) : this.cleanError('mobile');
   },
   validateMail: function (e) {
-    this.validate(this.data.regularExpression.mail, e.detail.value, true) ? this.showError('mail', 'Invalid Email !',e.detail.value) : this.cleanError('mail');
+    this.validate(/^[A-Za-z0-9]+([-_.][A-Za-zd]+)*@([A-Za-zd]+[-.])+[A-Za-zd]{2,5}$/, e.detail.value, true) ? this.showError('mail', 'Invalid Email !',e.detail.value) : this.cleanError('mail');
   },
   //validation function end
   //reset input value
