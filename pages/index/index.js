@@ -8,6 +8,7 @@ Page({
   data: {
     placeholderColor: 'gray',
     codeLength: 7,
+    pickerData: 'YYYY-MM-DD',
     formInfo: {
       nameError: false,
       mobileError: false,
@@ -22,8 +23,7 @@ Page({
     formVal: {
       name:'',
       mobile:'',
-      mail:'',
-      pickerData: 'YYYY-MM-DD'
+      mail:''
     }
   },
   // backup input value
@@ -31,7 +31,8 @@ Page({
     this.setData({
       backUp: {
         formVal: this.data.formVal,
-        placeholderColor: this.data.placeholderColor
+        placeholderColor: this.data.placeholderColor,
+        pickerData: this.data.pickerData
       }
     })
   },
