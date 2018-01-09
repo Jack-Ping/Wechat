@@ -23,7 +23,7 @@
         </view>
 
         <view class="submit">
-            <button type="primary" disabled="{{nameError || mobileError || mailError ? 'disabled' : ''}}" form-type="submit">Submit</button>
+            <button type="primary" disabled="{{formInfo.nameError || formInfo.mobileError || formInfo.mailError ? 'disabled' : ''}}" form-type="submit">Submit</button>
         </view>
     </form>
 </view>

@@ -139,7 +139,7 @@ Page({
         title: '成功',
         icon: 'success',
         duration: 2000
-      })
+      });
 
       return true;
     } else {
